@@ -619,7 +619,6 @@ if __name__ == '__main__':
     print(f'model: {config.model}')
     print(f'task_name: {config.task_name}')
     print(f'mixup: {config.mixup}')
-    print(f'base_optimizer: {config.base_optimizer}')
     print(f'SAM: {config.SAM}')
     print(f'SAM_type: {config.SAM_type}')
     print(f'SAM Optimizer: {config.sam_optimizer}')
