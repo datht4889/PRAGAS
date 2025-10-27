@@ -32,30 +32,30 @@ pip install -r requirements.txt
 
 **With BERT encoder:**
 ```bash
-cd CPL/bash
-bash bash.sh
+cd CPL
+bash bash/bash.sh
 ```
 
 **With Large Language Models (LLM):**
 ```bash
-cd CPL/bash
-bash bash_llm.sh
+cd CPL
+bash bash/bash_llm.sh
 ```
 
 #### SIRUS Baseline
 
 **With BERT encoder:**
 ```bash
-cd SIRUS/BERT/bash
-bash fewrel_5shot.sh    # For FewRel dataset
-bash tacred_5shot.sh    # For TACRED dataset
+cd SIRUS/BERT
+bash bash/fewrel_5shot.sh    # For FewRel dataset
+bash bash/tacred_5shot.sh    # For TACRED dataset
 ```
 
 **With Large Language Models (LLM):**
 ```bash
-cd SIRUS/LLM/bash
-bash fewrel_5shot.sh    # For FewRel dataset
-bash tacred_5shot.sh    # For TACRED dataset
+cd SIRUS/LLM
+bash bash/fewrel_5shot.sh    # For FewRel dataset
+bash bash/tacred_5shot.sh    # For TACRED dataset
 ```
 
 ---
