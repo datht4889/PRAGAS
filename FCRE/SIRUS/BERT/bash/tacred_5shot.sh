@@ -1,4 +1,4 @@
-!TOKENIZERS_PARALLELISM=true CUDA_VISIBLE_DEVICES=0 python train.py --task_name Tacred \
+TOKENIZER_PARALELISM=true CUDA_VISIBLE_DEVICES=0 python train.py --task_name Tacred \
     --num_k 5 \
     --num_gen 5 \
     --lambda_1 1 \
