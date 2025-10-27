@@ -1,9 +1,22 @@
-python train.py \
-  --task_name FewRel \
-  --num_k 5 \
-  --lambda_1 1 \
-  --lambda_2 2 \
-  --lambda_3 0.5 \
-  --temperature 0.05 \
-  --distance_threshold 0.3 \
-  --model llama3
+TOKENIZERS_PARALLELISM=true CUDA_VISIBLE_DEVICES=0 python train.py --task_name FewRel \
+    --num_k 5 \
+    --num_gen 5 \
+    --lambda_1 1 \
+    --lambda_2 2 \
+    --lambda_3 0.25 \
+    --temperature 0.05 \
+    --distance_threshold 0.3 \
+    --decay 0 \
+    --sam \
+    --sam_optimizer ASAM \
+    --rho 0.05 \
+    --dynamic-rho \
+    --rho-weight 4 \
+    --batch_size 8 \
+    --epoch 10 \
+    --epoch_mem 10 \
+    --distill \
+    --distill_type RKD \
+    --distill_top_k 10 \
+    --backbone llama3 \
+    --use_augment
