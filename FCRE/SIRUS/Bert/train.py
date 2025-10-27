@@ -884,7 +884,7 @@ if __name__ == '__main__':
     # FewRel
     parser.add_argument("--task_name", default="FewRel", type=str)
     parser.add_argument("--num_k", default=5, type=int)
-    parser.add_argument("--num_gen", default=2, type=int)
+    parser.add_argument("--num_gen", default=5, type=int)
     parser.add_argument("--lambda_1", default=1.0, type=float)
     parser.add_argument("--lambda_2", default=1.0, type=float)
     parser.add_argument("--lambda_3", default=0.25, type=float)
