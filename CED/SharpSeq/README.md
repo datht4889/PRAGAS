@@ -3,7 +3,7 @@ Source code for the ACL Rolling Review submission SharpSeq.
 
 
 ## Data & Model Preparation
-To access the dataset, please visit: 
+To access the dataset, please visit: https://drive.google.com/drive/folders/10eQsBwqXSGkuh9pZ_X_6fQsKG_UDIaPH
 
 
 To preprocess the data similar to [Lifelong Event Detection with Knowledge Transfer](https://aclanthology.org/2021.emnlp-main.428/) (Yu et al., EMNLP 2021), run the following commands:
