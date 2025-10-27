@@ -602,7 +602,6 @@ if __name__ == '__main__':
     config.epoch_mem = args.epoch_mem
     config.eval_each_task = args.eval_each_task
 
-    config.base_optimizer = args.base_optimizer
     config.SAM = args.SAM
     config.SAM_type = args.SAM_type
     config.rho = args.rho

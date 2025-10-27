@@ -515,7 +515,6 @@ if __name__ == '__main__':
     config.epoch_mem = args.epoch_mem
     config.total_round = args.total_round
 
-    config.base_optimizer = args.base_optimizer
     config.SAM = args.SAM
     config.SAM_type = args.SAM_type
     config.rho = args.rho
