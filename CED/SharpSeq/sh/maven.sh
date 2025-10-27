@@ -24,7 +24,7 @@ do
     --perm-id ${i} \
     --dropout "normal" \
     --p 0.2 \
-    --mul_distill \
+    --mul-distill \
     --kt \
     --kt2 \
     --train-epoch 15 \
@@ -33,13 +33,13 @@ do
     --batch-size 128 \
     --mode herding \
     --clusters 4 \
-    --mul_task \
+    --mul-task \
     --mul-task-type FairGrad \
     --sam 1 \
     --sam-optimizer LookbehindASAM \
     --rho 0.05 \
     --rho_weight 3 \
-    --num_sam_loss 2 > ${log_p}/perm_${i}/exp.log
+    --num-sam-loss 2 > ${log_p}/perm_${i}/exp.log
 
 
 done
