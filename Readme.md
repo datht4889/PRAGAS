@@ -88,9 +88,11 @@ bash sh/maven.sh
 If you use this code in your research, please cite:
 
 ```bibtex
-@article{pragas2024,
-  title={PRAGAS: Enhancing Few-Shot Continual Relation Extraction via Pairwise Augmentation and Guided Sharpness-Aware Optimization},
-  author={Hoang Thanh Dat, Nguyen Hoang Anh, Nam Le Hai, Linh Ngo Van, Sang Dinh},
-  year={2024}
+@article{pragas2025,
+    title={PRAGAS: Enhancing Few-Shot Continual Relation Extraction via Pairwise Augmentation and Guided Sharpness-Aware Optimization},
+    author={Dat, Hoang Thanh and Anh, Nguyen Hoang and Hai, Nam Le and Van, Linh Ngo and Dinh, Sang},
+    journal={Artificial Intelligence},
+    year={2025},
+    note={Manuscript Number: ARTINT-D-25-01408}
 }
 ```
