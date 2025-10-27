@@ -163,8 +163,6 @@ class Manager(object):
         optimizer = optim.AdamW(params=encoder.parameters(), lr=self.config.lr)
 
         if self.config.sam:
-            # base_optimizer = optim.AdamW
-            # optimizer = SAM(params=encoder.parameters(), base_optimizer=base_optimizer, rho=self.config.rho, adaptive=True, lr=self.config.lr)
             base_optimizer = optim.AdamW
             if self.config.sam_optimizer=='SAM':
                 optimizer = SAM(params=encoder.parameters(), base_optimizer=base_optimizer, rho=self.config.rho, adaptive=True, lr=self.config.lr, weight_decay=self.config.decay, betas=(0.9, 0.999))
