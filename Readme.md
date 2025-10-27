@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 ### Running Experiments
 
-#### CPL (Curriculum-based Prompt Learning)
+#### CPL (Contrastive Prompt Learning)
 
 **With BERT encoder:**
 ```bash
