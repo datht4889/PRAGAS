@@ -1,0 +1,13 @@
+matplotlib
+numpy
+scikit_learn
+torch
+tqdm
+transformers
+openai
+retry
+together
+dotenv
+peft
+llm2vec
+nltk
