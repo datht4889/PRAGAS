@@ -32,14 +32,14 @@ pip install -r requirements.txt
 
 **With BERT encoder:**
 ```bash
-cd CPL
-bash bash/bash.sh
+cd CPL/bash
+bash bash.sh
 ```
 
 **With Large Language Models (LLM):**
 ```bash
-cd CPL
-bash bash/bash_llm.sh
+cd CPL/bash
+bash bash_llm.sh
 ```
 
 #### SIRUS Baseline
