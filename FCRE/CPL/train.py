@@ -119,17 +119,9 @@ class Manager(object):
         else:
             data_loader = get_data_loader_BERT(self.config, training_data, shuffle=True)
         
-        if self.config.base_optimizer == 'Adam':
-            optimizer = optim.Adam(params=encoder.parameters(), lr=self.config.lr)
-        elif self.config.base_optimizer == 'AdamW':
-            optimizer = optim.AdamW(params=encoder.parameters(), lr=self.config.lr)
+        optimizer = optim.AdamW(params=encoder.parameters(), lr=self.config.lr)
         if self.config.SAM:
-            # base_optimizer = optim.Adam
-            # optimizer = SAM(params=encoder.parameters(), base_optimizer=base_optimizer, rho=self.config.rho, adaptive=True, lr=self.config.lr)
-            if self.config.base_optimizer == 'Adam':
-                base_optimizer = optim.Adam
-            elif self.config.base_optimizer == 'AdamW':
-                base_optimizer = optim.AdamW
+            base_optimizer = optim.AdamW
             if self.config.sam_optimizer=='SAM':
                 optimizer = SAM(params=encoder.parameters(), base_optimizer=base_optimizer, rho=self.config.rho, adaptive=True, lr=self.config.lr, weight_decay=self.config.decay, betas=(0.9, 0.999))
             elif self.config.sam_optimizer=='ASAM':
@@ -228,19 +220,9 @@ class Manager(object):
         else:
             data_loader = get_data_loader_BERT(self.config, training_data, shuffle=True)
         
-        if self.config.base_optimizer == 'Adam':
-            optimizer = optim.Adam(params=encoder.parameters(), lr=self.config.lr)
-        elif self.config.base_optimizer == 'AdamW':
-            optimizer = optim.AdamW(params=encoder.parameters(), lr=self.config.lr)
-            
+        optimizer = optim.AdamW(params=encoder.parameters(), lr=self.config.lr)
         if self.config.SAM:
-            # base_optimizer = optim.Adam
-            # optimizer = SAM(params=encoder.parameters(), base_optimizer=base_optimizer, rho=self.config.rho, adaptive=True, lr=self.config.lr)
-
-            if self.config.base_optimizer == 'Adam':
-                base_optimizer = optim.Adam
-            elif self.config.base_optimizer == 'AdamW':
-                base_optimizer = optim.AdamW
+            base_optimizer = optim.AdamW
             if self.config.sam_optimizer=='SAM':
                 optimizer = SAM(params=encoder.parameters(), base_optimizer=base_optimizer, rho=self.config.rho, adaptive=True, lr=self.config.lr, weight_decay=self.config.decay, betas=(0.9, 0.999))
             elif self.config.sam_optimizer=='ASAM':
@@ -583,7 +565,6 @@ if __name__ == '__main__':
     parser.add_argument("--epoch_mem", default=6, type=int) # 6, 10
     parser.add_argument("--eval_each_task", action = 'store_true', default=False)
     # SAM
-    parser.add_argument("--base_optimizer", default="AdamW", type=str)
     parser.add_argument("--SAM", action = 'store_true', default=False)
     parser.add_argument("--sam_optimizer", default="SAM", type=str)
     parser.add_argument("--SAM_type", default="current", type=str)
