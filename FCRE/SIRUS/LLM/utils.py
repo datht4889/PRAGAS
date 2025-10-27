@@ -1,3 +1,4 @@
+import os
 import torch
 import openai
 import random
@@ -237,30 +238,30 @@ class Moment:
         return infoNCE_loss
     
 
-# # for openai
-# @retry(tries=10, delay=1)
-# def gpt(input, t=0, key=None):
-#     MAX_TRIES = 15
-#     client = openai.OpenAI(api_key=)
+# for openai
+@retry(tries=10, delay=1)
+def gpt(input, t=0, key=None):
+    MAX_TRIES = 15
+    client = openai.OpenAI(api_key=key)
     
-#     while MAX_TRIES > 0:
-#         try:
-#             time.sleep(5)
-#             completion = client.chat.completions.create(
-#             model="gpt-4o-mini",
-#             messages=[
-#                 {"role": "user", "content": input}
-#             ]
-#             ,
-#             temperature=t
+    while MAX_TRIES > 0:
+        try:
+            time.sleep(5)
+            completion = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "user", "content": input}
+            ]
+            ,
+            temperature=t
 
-#             )
-#             return completion.choices[0].message.content
-#         except Exception as e:
-#             print(e)
-#             MAX_TRIES -= 1
-#     print('gen failed')
-#     return ''
+            )
+            return completion.choices[0].message.content
+        except Exception as e:
+            print(e)
+            MAX_TRIES -= 1
+    print('gen failed')
+    return ''
     
 
 
@@ -350,33 +351,19 @@ def prompt_input(rname, rdesc, sample=None, n=10):
     return pre_input + input
 
 
-def gen_data(dataset, r2desc, rel2id, sample, n=10, t=0, current_round=None):
+def gen_data(r2desc, rel2id, sample, n=10, t=0, key=None):
     rname = sample['relation']
     rdesc = r2desc[rname]
     print('####', rname ,'####')
     input = prompt_input(rname, rdesc, sample=sample, n=n)
-    # print(input)
-    # output = gpt(input=input, t=t)
-    with open(f'data/CFRL{dataset}/syn_data.json', 'r') as f:
-        syn_data = json.load(f)
-    output = syn_data['Round '+str(current_round)][rname]
-    # print(output)
+    print(input)
+    output = gpt(input=input, t=t, key=key)
+    print(output)
     try:
         parse_output = parse(rel2id, output)
-    except Exception as e:
-        # output = gpt(input=input + "\nRelation: ", t=t)
-        # parse_output = parse(rel2id, output)
-        print("Round "+str(current_round)+" failed")
-        print("Relation: ", rname)
-        print(e)
+    except:
+        output = gpt(input=input + "\nRelation: ", t=t, key=key)
+        parse_output = parse(rel2id, output)
+
 
     return parse_output
-
-
-
-
-
-
-
-
-

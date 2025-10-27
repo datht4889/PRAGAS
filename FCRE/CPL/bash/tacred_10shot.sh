@@ -1,1 +1,0 @@
-python train.py --task_name Tacred --num_k 10 --num_gen 5
