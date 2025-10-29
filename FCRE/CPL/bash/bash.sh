@@ -5,6 +5,7 @@ do
         --output-size 768 \
         --max-length 256 \
         --num_k 5 \
+        --gen 1 \
         --num_gen 5 \
         --decay 0.01 \
         --mixup \
