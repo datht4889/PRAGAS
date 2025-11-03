@@ -159,9 +159,12 @@ class Moment:
 
 from openai import OpenAI
 
-def gpt(input, t=0):
+def gpt(input, t=0, key=None):
     MAX_TRIES = 15
-    client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+    if key:
+        client = OpenAI(api_key=key)
+    else:
+        client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
     
     while MAX_TRIES > 0:
         try:
