@@ -2,7 +2,7 @@
 ## Project Structure
 
 ```
-mutual-pairing-data-augmentation/
+PRAGAS/
 ├── FCRE/              # Few-Shot Continual Relation Extraction
 │   ├── CPL/           # Contrastive Prompt Learning
 │   └── SIRUS/         # Similar Relation Clusters
