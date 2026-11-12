@@ -1,0 +1,18 @@
+.env
+__pycache__/
+*.DS_Store
+*.log
+logs/
+.vscode/
+.idea/
+*.ipynb_checkpoints
+
+# preprocessing caches created at runtime
+**/_process_*_aug/
+
+# Datasets are never distributed with this repo (FewRel / TACRED / MAVEN / ACE licenses).
+# Place them locally as described in README.md.
+**/data/
+*.pkl
+*.npy
+*.jsonl

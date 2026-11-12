@@ -1,0 +1,7 @@
+torch>=2.1
+transformers>=4.43,<4.53
+numpy<2
+tqdm
+scikit-learn
+cvxpy
+h5py

@@ -1,0 +1,12 @@
+torch>=2.1
+transformers>=4.43,<4.53
+numpy<2
+scikit-learn
+tqdm
+nltk
+openai>=1.0
+retry
+python-dotenv
+# LLM2Vec backbones (only needed for train_llm.py and SIRUS/LLM)
+peft
+llm2vec==0.2.3
