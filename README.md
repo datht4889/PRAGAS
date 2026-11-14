@@ -1,8 +1,10 @@
 # PRAGAS: Enhancing Few-Shot Continual Relation Extraction via Pairwise Augmentation and Guided Sharpness-Aware Optimization
 
-Official implementation of **PRAGAS**.
+Official implementation of **PRAGAS**, published in *Artificial Intelligence*.
 
 Hoang Thanh Dat\*, Nguyen Hoang Anh\*, Nam Le Hai, Linh Ngo Van, Sang Dinh (\* equal contribution)
+
+**Paper:** [https://www.sciencedirect.com/science/article/abs/pii/S0004370226001712](https://www.sciencedirect.com/science/article/abs/pii/S0004370226001712)
 
 ## Overview
 
@@ -32,7 +34,7 @@ Continual Event Detection, F1 (%) after the last task:
 | SharpSeq | 57.85 | 61.55 |
 | **SharpSeq + PRAGAS** | **61.17** | **63.57** |
 
-See the paper for the full tables, LLM2Vec backbones, forgetting, ablations and hyperparameter sensitivity.
+See the [paper](https://www.sciencedirect.com/science/article/abs/pii/S0004370226001712) for the full tables, LLM2Vec backbones, forgetting, ablations and hyperparameter sensitivity.
 
 ## Project Structure
 
@@ -178,10 +180,17 @@ This code builds on the official implementations of CPL (Ma et al., COLING 2024)
 ## Citation
 
 ```bibtex
-@article{pragas2025,
-    title={PRAGAS: Enhancing Few-Shot Continual Relation Extraction via Pairwise Augmentation and Guided Sharpness-Aware Optimization},
-    author={Dat, Hoang Thanh and Anh, Nguyen Hoang and Hai, Nam Le and Van, Linh Ngo and Dinh, Sang},
-    journal={Artificial Intelligence},
-    year={2025}
+@article{DAT2027104645,
+    title = {Enhancing few-shot continual relation extraction via pairwise augmentation and guided sharpness-aware optimization},
+    journal = {Artificial Intelligence},
+    volume = {362},
+    pages = {104645},
+    year = {2027},
+    issn = {0004-3702},
+    doi = {https://doi.org/10.1016/j.artint.2026.104645},
+    url = {https://www.sciencedirect.com/science/article/pii/S0004370226001712},
+    author = {Hoang Thanh Dat and Nguyen Hoang Anh and Nam {Le Hai} and Linh {Ngo Van} and Sang Dinh},
+    keywords = {Continual relation extraction, Continual event detection, Data augmentation, Sharpness-aware minization, Large language models},
+    abstract = {Few-shot Continual Relation Extraction (FCRE) remains a challenging problem due to the dual issues of limited annotated data and catastrophic forgetting. To address these challenges, we propose Pragas, a unified framework that integrates Pairwise Augmentation (PairAug) and Guided Sharpness-Aware Minimization (GuidedSAM) with Salient Distillation. PairAug enriches the training distribution by generating diverse, relation-preserving synthetic samples without relying on external models, while GuidedSAM adaptively adjusts optimization sharpness based on relational knowledge deviation, promoting stable and generalizable learning across tasks. Extensive experiments on FewRel and TACRED demonstrate that Pragas consistently surpasses prior state-of-the-art approaches by a remarkable margin in average accuracy while significantly mitigating forgetting. Comprehensive ablation studies further validate the complementary contributions of PairAug and GuidedSAM, the effectiveness of the proposed loss components, and the robustness of key hyperparameters. Moreover, we extend Pragas to Continual Event Detection (CED), where it achieves consistent improvements, underscoring its versatility as a general continual information extraction framework. All resources are publicly available at: https://github.com/datht4889/PRAGAS}
 }
 ```
